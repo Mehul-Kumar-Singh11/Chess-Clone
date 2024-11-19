@@ -1,36 +1,6 @@
-System Design for Real-Time Multiplayer Game
-
-Overview:
-This system is designed to support real-time interaction between two players in a multiplayer game. It leverages WebSockets 
-for efficient communication between the client (browser) and the server, allowing for a seamless and interactive experience. 
-The system handles multiple games simultaneously, ensuring players can join, play, and interact in real-time.
-
-1. Communication with WebSockets
-- WebSockets are used for real-time communication between the players and the server.
-- Unlike HTTP, WebSockets allow for persistent connections, enabling fast and continuous exchanges of data (like player moves, 
-game state updates etc). Each player (browser) connects to the server through a WebSocket, ensuring real-time interaction 
-without the need to continuously make HTTP requests.
-
-2. Game Storage & Management
-The system supports multiple games running simultaneously. Each game is stored with its own set of details, such as the players,
-state, and moves made.
-Games are stored in-memory in a dictionary-like structure:
-  Games = {
-    "game1": {
-        "participant1": "playerA",
-        "participant2": "playerB",
-        "state": "in-progress",  #game state: waiting, in-progress, finished
-        "moves": ["move1", "move2"],
-        "startTime": "2024-11-20T12:00:00Z"
-    }
- }
-When a player joins, their details are stored, and the game state is updated.
-
-
-Sure! Here's a more concise and straightforward version of your system design description that is still professional but more to the point:
-
 Real-Time Multiplayer Game - System Design
-Overview
+
+1. Overview
 This system is designed for real-time interaction between two players in a multiplayer game using WebSockets. WebSockets are chosen for their ability to provide continuous, two-way communication, making it ideal for real-time gaming where players interact with each other and the server frequently.
 
 1. Communication with WebSockets
@@ -40,11 +10,8 @@ Each player (browser) connects to the server through a WebSocket, ensuring real-
 
 2. Game Storage & Management
 The system supports multiple games running simultaneously. Each game is stored with its own set of details, such as the players, state, and moves made.
-
 Games are stored in-memory in a dictionary-like structure:
 
-python
-Copy code
 Games = {
     "game1": {
         "participant1": "playerA",
